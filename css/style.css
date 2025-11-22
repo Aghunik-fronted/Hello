@@ -1,0 +1,79 @@
+body {
+    margin: 0 auto;
+}
+.container {
+    background: rgb(209, 210, 211);
+    max-width: 1200px;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 50px auto;
+    overflow: hidden;
+    perspective: 700px;
+    transform-style: preserve-3d;
+}
+.box {
+    max-width: 500px;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(134, 42, 99);
+    border: 5px solid rgb(78, 10, 52);
+    overflow: hidden;
+    transition: all 2s;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+.hello {
+   opacity: 0;
+   position: absolute;
+   bottom: center;
+   left: center;
+   font-size: 24px;
+   letter-spacing: 1.5;
+   font-weight: 600;
+}
+.box:hover .hello {
+    animation-name: hello;
+    animation-duration: 2s;
+    animation-iteration-count: inherit;
+    animation-direction: normal;
+    animation-timing-function:  step-end;
+}
+.container:hover .hello {
+   opacity: 1;
+}
+.block1 {
+    transform-origin: left;
+    transition: ease-in;
+}
+.block2 {
+    transform-origin: right;
+    transition: ease-in;
+}
+.container:hover > .block1 {
+   transform: skewX(-60deg);
+    transform:  skewY(-5deg);
+    transform-origin: left;
+    transition: 2s ease;
+    animation-timing-function: ease;
+    margin: 20px;
+    margin-right: 150px;
+    opacity: 1;
+    max-width: 400px;
+}
+.container:hover > .block2 {
+    transform: skewX(60deg);
+    transform:  skewY(5deg);
+    transform-origin: right;
+    transition: 2s ease;
+    margin: 20px;
+    margin-left: 150px;
+    opacity: 1;
+    max-width: 400px;
+}
+.container:not:hover > .box {
+    transition-duration: 0s;
+}
