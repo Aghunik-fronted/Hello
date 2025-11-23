@@ -11,9 +11,16 @@ body {
     align-items: center;
     gap: 0;
     margin: 50px auto;
-    overflow: hidden;
-    perspective: 700px;
+}
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    flex: 1;
+    perspective: 1000px;
     transform-style: preserve-3d;
+    margin: 0;
 }
 .box {
     max-width: 500px;
@@ -21,16 +28,14 @@ body {
     height: 250px;
     background-color: rgb(134, 42, 99);
     border: 5px solid rgb(78, 10, 52);
-    overflow: hidden;
     transition: all 2s;
     cursor: pointer;
-    transform-style: preserve-3d;
 }
-.hello {
+.wrapper > .hello {
    opacity: 0;
    position: absolute;
-   bottom: center;
-   left: center;
+   bottom: 45%;
+   left: 46%;
    font-size: 24px;
    letter-spacing: 1.5;
    font-weight: 600;
@@ -40,40 +45,46 @@ body {
     animation-duration: 2s;
     animation-iteration-count: inherit;
     animation-direction: normal;
-    animation-timing-function:  step-end;
+    animation-timing-function:  ease-out;
+    animation-fill-mode: backwards;
 }
-.container:hover .hello {
+.wrapper:hover .hello {
    opacity: 1;
+
 }
 .block1 {
     transform-origin: left;
-    transition: ease-in;
+    transition: ease-out;
 }
 .block2 {
     transform-origin: right;
-    transition: ease-in;
+    transition: ease-out;
 }
-.container:hover > .block1 {
-   transform: skewX(-60deg);
+.wrapper:hover > .block1 {
+   transform: skewX(20deg);
     transform:  skewY(-5deg);
+    transform: rotateY(45deg);
     transform-origin: left;
     transition: 2s ease;
     animation-timing-function: ease;
     margin: 20px;
-    margin-right: 150px;
+    margin-right: 100px;
     opacity: 1;
     max-width: 400px;
+    animation-fill-mode: backwards;
 }
-.container:hover > .block2 {
-    transform: skewX(60deg);
+.wrapper:hover > .block2 {
+    transform: skewX(-20deg);
     transform:  skewY(5deg);
+    transform: rotateY(-45deg);
     transform-origin: right;
     transition: 2s ease;
     margin: 20px;
-    margin-left: 150px;
+    margin-left: 100px;
     opacity: 1;
     max-width: 400px;
+    animation-fill-mode: backwards;
 }
-.container:not:hover > .box {
+.wrapper:not:hover > .box {
     transition-duration: 0s;
 }
