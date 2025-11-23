@@ -1,6 +1,3 @@
-body {
-    margin: 0 auto;
-}
 .container {
     background: rgb(209, 210, 211);
     max-width: 1200px;
@@ -87,4 +84,102 @@ body {
 }
 .wrapper:not:hover > .box {
     transition-duration: 0s;
+}
+.holder {
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto;
+}
+.inner-box {
+    max-width: 1200px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; 
+}
+.inner-box-row {
+    max-width: 600px;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(238, 240, 240);
+    border: 1px solid rgb(220, 222, 223);
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.5;
+    text-align: center;
+}
+.inner-block-row {
+    max-width: 600px;
+    width: 100%;
+    height: 250px;
+    flex: 1;
+    border: 1px solid rgb(220, 222, 223);
+    box-sizing: border-box;
+}
+img {
+    max-width: 600px;
+    width: 100%;
+    height: 250px;
+    display: block;
+    transition: transform 1s;
+}
+.inner-box:hover .inner-block-row{
+    transform: scale(1);
+    animation: scaling 1s alternate ease 1s;
+    transform-origin: center center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.inner-box:hover .inner-box-row {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+@keyframes scaling {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@media (max-width:1600px) {
+     .container {
+        max-width: 1200px;
+     }
+       .box {
+        max-width: 500px;
+     }
+
+}
+@media (max-width: 1600px) {
+    .holder {
+        max-width: 1200px;
+    }
+    .inner-box {
+        max-width: 1200px;
+    }
+    .inner-box-row {
+        max-width: 600px;
+    }
+     .inner-box-row  .title {
+        font-size: 16px;
+        max-width: 600px;
+     }
+    .inner-block-row {
+        max-width: 600px;
+     }
 }
